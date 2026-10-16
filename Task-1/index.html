@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMW Vision Gallery</title>
+<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+  <div class="logo">B<span>MW</span></div>
+  <div class="header-meta"></div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1 class="hero-title">The <em>Art</em><br>of Seeing</h1>
+    <p class="hero-sub">A curated gallery of the BMW </p>
+  </div>
+  <div class="count-badge" id="total-count">24 images</div>
+</section>
+
+<div class="filters-bar">
+  <span class="filter-label">Filter —</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="M2">M2</button>
+  <button class="filter-btn" data-filter="M3">M3</button>
+  <button class="filter-btn" data-filter="M4">M4</button>
+  <button class="filter-btn" data-filter="M5">M5</button>
+</div>
+
+<div class="toolbar">
+  <div class="result-count"><span id="visible-count">24</span> results</div>
+  <div class="layout-btns">
+    <button class="layout-btn" data-layout="grid-2" title="2 columns">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
+    </button>
+    <button class="layout-btn active" data-layout="grid-3" title="3 columns">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><rect x="1" y="1" width="4" height="4"/><rect x="6" y="1" width="4" height="4"/><rect x="11" y="1" width="4" height="4"/><rect x="1" y="6" width="4" height="4"/><rect x="6" y="6" width="4" height="4"/><rect x="11" y="6" width="4" height="4"/><rect x="1" y="11" width="4" height="4"/><rect x="6" y="11" width="4" height="4"/><rect x="11" y="11" width="4" height="4"/></svg>
+    </button>
+    <button class="layout-btn" data-layout="grid-4" title="4 columns">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><rect x="1" y="1" width="3" height="3"/><rect x="5" y="1" width="3" height="3"/><rect x="9" y="1" width="3" height="3"/><rect x="13" y="1" width="3" height="3"/><rect x="1" y="5" width="3" height="3"/><rect x="5" y="5" width="3" height="3"/><rect x="9" y="5" width="3" height="3"/><rect x="13" y="5" width="3" height="3"/></svg>
+    </button>
+  </div>
+</div>
+
+<main class="gallery grid-3" id="gallery"></main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-backdrop" id="lb-backdrop"></div>
+  <button class="lb-close" id="lb-close" aria-label="Close">
+    <svg viewBox="0 0 16 16"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
+  </button>
+  <div class="lb-container">
+    <button class="lb-nav" id="lb-prev" aria-label="Previous image">
+      <svg viewBox="0 0 20 20"><polyline points="13,4 7,10 13,16"/></svg>
+    </button>
+    <div style="position: relative;">
+      <div class="lb-media">
+        <img id="lb-img" src="" alt="" />
+      </div>
+      <div class="lb-info">
+        <div>
+          <div class="lb-tag" id="lb-tag"></div>
+          <div class="lb-title" id="lb-title"></div>
+        </div>
+        <div class="lb-counter" id="lb-counter"></div>
+      </div>
+    </div>
+    <button class="lb-nav" id="lb-next" aria-label="Next image">
+      <svg viewBox="0 0 20 20"><polyline points="7,4 13,10 7,16"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="empty-state" id="empty-state">
+  <p>No images found</p>
+  <small>Try a different category</small>
+</div>
+<script src="index.js"></script>
+
+</body>
+</html>
